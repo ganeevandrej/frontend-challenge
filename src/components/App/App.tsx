@@ -1,15 +1,15 @@
 import React from "react";
-import { LinkApp } from "../helpers/LinkApp";
 import { Route, Routes } from "react-router-dom";
 import { HomePage } from "../Pages/HomePage";
 import { FavoritesPage } from "../Pages/FavoritesPage";
+import { LinkApp } from "../helpers/LinkApp";
 import "../../styles/index.scss";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <>
       <header className="header">
-        <div  className=" wrapper">
+        <div className=" wrapper">
           <nav className="nav">
             <LinkApp href={"/"} name={"Все котики"} />
             <LinkApp href={"/favorites"} name={"Любимые котики"} />
@@ -27,5 +27,3 @@ const App: React.FC = () => {
     </>
   );
 };
-
-export default App;

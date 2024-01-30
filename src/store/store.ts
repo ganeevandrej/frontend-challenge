@@ -1,8 +1,8 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import ImageState from "./reducers/ImageSlice";
+import CatState from "./reducers/CatSlice";
 
 const rootReducer = combineReducers({
-    ImageState
+    CatState
 });
 
 export const setupStore = () => {
