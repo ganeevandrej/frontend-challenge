@@ -4,23 +4,28 @@ import { getImages } from "../../store/reducers/ActionCreators";
 import { CatBlock } from "../helpers/CatBlock";
 
 export const HomePage: React.FC = () => {
-  const [scroll, setScroll] = useState<number>(15);
+  const [isFetching, setIsFetching] = useState<boolean>(true);
   const {cats, isLoading }  = useAppSelector((state) => state.CatState);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     document.addEventListener("scroll", hendlerScroll);
-    dispatch(getImages(scroll));
+
+    if(isFetching) {
+      dispatch(getImages());
+      setIsFetching(false);
+    }
+
     return () => {
       document.removeEventListener("scroll", hendlerScroll);
     };
-  }, [scroll, dispatch]);
+  }, [isFetching, dispatch]);
 
   const hendlerScroll = () => {
     const element = document.documentElement;
     if(element.scrollHeight - (element.scrollTop + window.innerHeight) < 70) {
       console.log("vhvjh");
-      setScroll((state) => state + 5);
+      setIsFetching(true);
     }
   };
 

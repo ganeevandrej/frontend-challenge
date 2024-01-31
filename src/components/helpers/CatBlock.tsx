@@ -24,9 +24,9 @@ export const CatBlock: React.FC<ICatBlock> = ({ cats }) => {
   return (
     <>
       {cats &&
-        cats.map(({ id, url, isFavorite }) => {
+        cats.map(({ id, url, isFavorite }, index) => {
           return (
-            <div key={id} className="kat">
+            <div key={id+index} className="kat">
               <div className="block__inner">
                 <img className="cat_img" src={url} alt={id} />
                 <div 

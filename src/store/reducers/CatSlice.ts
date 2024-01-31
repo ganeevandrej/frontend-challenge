@@ -24,7 +24,7 @@ export const CatSlice = createSlice({
         },
         imagesFetchingSuccess(state, action: PayloadAction<ICat[]>) {
             state.isLoading = false;
-            state.cats = action.payload;
+            state.cats = [...state.cats, ...action.payload];
             state.isError = '';
         },
         imagesFetchingError(state, action: PayloadAction<string>) {
