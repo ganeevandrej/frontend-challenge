@@ -32,14 +32,11 @@ export const HomePage: React.FC = () => {
     }
   };
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>
-  ): void => {
+  const handleClick = (event: any): void => {
     const target = event.target;
-    if (target instanceof HTMLElement) {
-      const id = getId(target);
-      id && dispatch(actionsFavoritesCat(id));
-    }
+    const id = getId(target);
+    console.log(id);
+    id && dispatch(actionsFavoritesCat(id));
   };
 
   const loadingBlock = (

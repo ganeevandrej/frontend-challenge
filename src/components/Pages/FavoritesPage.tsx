@@ -9,14 +9,11 @@ export const FavoritesPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const { actionsFavoritesCat } = CatSlice.actions;
 
-  const handleClick = (
-    event: React.MouseEvent<HTMLElement, MouseEvent>
-  ): void => {
+  const handleClick = (event: any): void => {
     const target = event.target;
-    if (target instanceof HTMLElement) {
-      const id = getId(target);
-      id && dispatch(actionsFavoritesCat(id));
-    }
+    const id = getId(target);
+    console.log(id);
+    id && dispatch(actionsFavoritesCat(id));
   };
 
   return (
