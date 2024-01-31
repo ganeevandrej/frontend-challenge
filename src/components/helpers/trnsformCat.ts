@@ -1,14 +1,14 @@
-import { ICat } from "../../models/ICat"
+import { ICat } from "../../models/ICat";
 
 type Catfetching = {
-    url: string,
-    id: string
-}
+  url: string;
+  id: string;
+};
 
 export const transformCat = ({ url, id }: Catfetching): ICat => {
-    return {
-        url,
-        id,
-        isFavorite: false
-    }
-}
+  return {
+    url,
+    id,
+    isFavorite: false,
+  };
+};

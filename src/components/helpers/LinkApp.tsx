@@ -6,8 +6,7 @@ export const LinkApp: React.FC<ILinkApp> = ({ href, name }) => {
   return (
     <NavLink
       to={href}
-      className={
-        ({ isActive, isPending }) => 
+      className={({ isActive, isPending }) =>
         isPending ? "pending" : isActive ? "active" : ""
       }
     >
